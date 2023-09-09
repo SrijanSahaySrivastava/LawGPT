@@ -1,0 +1,5 @@
+langchain
+FAISS-cpu
+pypdf
+ctransformers
+sentence-transformers
