@@ -3,3 +3,4 @@ FAISS-cpu
 pypdf
 ctransformers
 sentence-transformers
+fastapi
