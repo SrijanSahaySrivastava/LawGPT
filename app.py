@@ -4,11 +4,6 @@ from langchain.vectorstores import FAISS
 from langchain.llms import CTransformers
 from langchain.chains import RetrievalQA
 
-from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain.document_loaders import PyPDFLoader, DirectoryLoader
-from langchain.embeddings import HuggingFaceEmbeddings
-from langchain.vectorstores import FAISS
-
 
 DB_FAISS_PATH = "vectorestores/db_faiss"
 
@@ -17,6 +12,7 @@ custom_prompt_template = """Use the Following Piece of information to answer the
 Context: {context}
 Question: {question}
 
+where ever you see the word "india" in the answer, replace it with "Bharat" and where ever you see the word "indian" in the answer, replace it with "Bharatiya"
 Only returns the helpful answer below and nothing else.
 Helpful answer:
 """
@@ -92,8 +88,12 @@ async def query(item: item):
     return ans.get("result")
 
 
-# x = input("Enter your question here:")
-# print(final_result(x))
+# uvicorn app:app --host 0.0.0.0 --port 8000
+
+
+# x = "Draft a contract for a sale of a car between two parties."
+# ans = final_result(x)
+# print(ans)
 
 
 # # Chain lit
