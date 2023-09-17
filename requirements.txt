@@ -4,3 +4,4 @@ pypdf
 ctransformers
 sentence-transformers
 fastapi
+uvicorn
