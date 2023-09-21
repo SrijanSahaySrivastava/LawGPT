@@ -1,4 +1,5 @@
 langchain
+huggingface-hub
 FAISS-cpu
 pypdf
 ctransformers
