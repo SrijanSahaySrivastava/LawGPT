@@ -52,8 +52,8 @@ def retireval_qa_chain(llm, prompt, db):
 
 def qa_bot():
     embeddings = HuggingFaceEmbeddings(
-        model_name="sentence-transformers/all-MiniLM-L6-v2",
-        model_kwargs={"device": "cpu"},
+        model_name="bert-base-uncased",
+        model_kwargs={"device": "cuda"},
     )
 
     db = FAISS.load_local(DB_FAISS_PATH, embeddings)
